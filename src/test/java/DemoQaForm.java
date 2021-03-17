@@ -4,7 +4,9 @@ import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+
 import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.by;
 import static com.codeborne.selenide.Selectors.byText;
@@ -61,17 +63,17 @@ public class DemoQaForm {
         $("#submit").click();
 
         //Проверка формы
-        $(".modal-content").shouldHave(text(acceptFormText));
-        $(".table-responsive").shouldHave(text(fullName));
-        $(".table-responsive").shouldHave(text(userEmail));
-        $(".table-responsive").shouldHave(text(mobile));
-        $(".table-responsive").shouldHave(text("Male"));
-        $(".table-responsive").shouldHave(text(birth));
-        $(".table-responsive").shouldHave(text("Physics"));
-        $(".table-responsive").shouldHave(text(hobbies));
-        $(".table-responsive").shouldHave(text("123.jpg"));
-        $(".table-responsive").shouldHave(text(address));
-        $(".table-responsive").shouldHave(text(stateAndCity));
+        $(".modal-content").shouldHave(text(acceptFormText),
+                text(fullName),
+                text(userEmail),
+                text(mobile),
+                text("Male"),
+                text(birth),
+                text("Physics"),
+                text(hobbies),
+                text("123.jpg"),
+                text(address),
+                text(stateAndCity));
         $("#closeLargeModal").click();
 
     }
