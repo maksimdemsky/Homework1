@@ -28,7 +28,9 @@ public class DemoQaForm {
             stateAndCity = "NCR Delhi",
             fullName = "Maksim Demsky",
             hobbies = "Sports, Music",
-            acceptFormText = "Thanks for submitting the form";
+            acceptFormText = "Thanks for submitting the form",
+            sex = "Male",
+            subject = "Physics";
 
 
     @BeforeAll
@@ -43,22 +45,22 @@ public class DemoQaForm {
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
-        $(byText("Male")).click();
+        $(byText(sex)).click();
         $("#userNumber").setValue(mobile);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").click();
         $(byText("March")).click();
         $(".react-datepicker__year-select").click();
         $(byText("1997")).click();
-        $(".react-datepicker__month").find(byText("7")).click();
-        $("#subjectsInput").setValue("Ph").pressEnter();
-        $("#hobbiesWrapper").find(byText(hobby1)).click();
-        $("#hobbiesWrapper").find(byText(hobby2)).click();
+        $(".react-datepicker__month").$(byText("7")).click();
+        $("#subjectsInput").setValue(subject).pressEnter();
+        $("#hobbiesWrapper").$(byText(hobby1)).click();
+        $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/123.jpg"));
         $("#currentAddress").setValue(address);
-        $("#stateCity-wrapper").find(byText("Select State")).click();
+        $("#stateCity-wrapper").$(byText("Select State")).click();
         $(byText(state)).click();
-        $("#stateCity-wrapper").find(byText("Select City")).click();
+        $("#stateCity-wrapper").$(byText("Select City")).click();
         $(byText(city)).click();
         $("#submit").click();
 
@@ -74,7 +76,6 @@ public class DemoQaForm {
                 text("123.jpg"),
                 text(address),
                 text(stateAndCity));
-        $("#closeLargeModal").click();
 
     }
 
